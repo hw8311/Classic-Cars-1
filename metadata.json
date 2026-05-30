@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Classic Chrome Web Forge",
+  "description": "Transforms car websites into authentic vintage workshop experiences featuring chrome textures, bold typography, and essential legal content for restorations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Yellowtail&family=Oswald:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Rye", Georgia, serif;
+  --font-script: "Yellowtail", cursive;
+  --font-body: "Barlow Condensed", "Oswald", sans-serif;
+  --font-sans: "Barlow Condensed", "Oswald", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+}
+
+/* Custom Material Utility Classes */
+
+/* Subtle film grain/grid overlay */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.25;
+  z-index: 99;
+}
+
+/* Brushed Chrome Plate with Bevel and Screws Effect */
+.chrome-panel {
+  background: linear-gradient(
+    105deg,
+    #2c2b27 0%,
+    #5c5a52 15%,
+    #d2cec0 45%,
+    #8d897e 68%,
+    #3b3b36 100%
+  );
+  border: 2px solid #1a1917;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.6),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.55),
+    0 12px 32px rgba(0, 0, 0, 0.5);
+  color: #080808;
+}
+
+/* Creamy Glossy Enamel Plate (like 50s tin signs) */
+.vintage-enamel {
+  background: linear-gradient(180deg, #f1e7cf 0%, #dfd0ad 100%);
+  border: 3px solid #8f1f17;
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.7),
+    inset 0 -4px 8px rgba(80, 50, 20, 0.25),
+    0 10px 24px rgba(0, 0, 0, 0.35);
+  color: #111111;
+}
+
+/* Deep Hot-Rod Candy Apple Red Lacquered Badge with bevel shadow */
+.red-metal-badge {
+  background: linear-gradient(180deg, #b83226 0%, #801b13 55%, #4b0d09 100%);
+  color: #f0e7d2;
+  border: 1px solid #d2cec0;
+  text-shadow: 0 1.5px 2px rgba(0, 0, 0, 0.85);
+  box-shadow:
+    inset 0 1.5px 0.5px rgba(255, 255, 255, 0.45),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.7),
+    0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Wrench Badge Center Medallion Inner Shadow */
+.emblem-medallion {
+  background: radial-gradient(circle, #2e1d0f 0%, #100b05 100%);
+  border: 3px solid #b46a2c;
+  box-shadow:
+    inset 0 4px 8px rgba(0, 0, 0, 0.9),
+    0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark Garage Asphalt Textured Background */
+.garage-surface {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(180, 106, 44, 0.12), transparent 45%),
+    linear-gradient(180deg, #121210 0%, #050505 100%);
+}
+
+/* Deep Petrol Shiny Metal */
+.petrol-lacquer {
+  background:
+    radial-gradient(circle at 25% 15%, rgba(126, 169, 155, 0.28), transparent 40%),
+    linear-gradient(145deg, #1e4a48 0%, #102826 60%, #050e0d 100%);
+  border: 1.5px solid rgba(210, 206, 192, 0.3);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.18),
+    inset 0 -4px 10px rgba(0, 0, 0, 0.6),
+    0 12px 28px rgba(0, 0, 0, 0.45);
+}
+
+/* Pinstripe Divider Red Accent Lines */
+.pinstripe-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pinstripe-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #8f1f17 30%, #b46a2c 50%, #8f1f17 70%, transparent);
+  flex-grow: 1;
+}
+
+/* Custom Headings Styles */
+.hero-title-main {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: #dfd0ad;
+  letter-spacing: 0.02em;
+  text-shadow:
+    0 2px 0 #050505,
+    0 5px 0 #3a1712,
+    0 8px 20px rgba(0, 0, 0, 0.85);
+}
+
+.hero-title-script {
+  font-family: var(--font-script);
+  color: #c92c20;
+  text-shadow:
+    1px 1.5px 0 #f1e7cf,
+    2.5px 3.5px 0 #4b0d09,
+    0 8px 20px rgba(0, 0, 0, 0.85);
+}
+
+/* Custom Scrollbar for Vintage aesthetic */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0b0a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#4b0d09, #8f1f17);
+  border: 2px solid #0b0b0a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b46a2c;
+}
+
+/* Smooth active menu indicators */
+.nav-link-active {
+  border-bottom: 2.5px solid #8f1f17;
+  color: #8f1f17 !important;
+}
+
+/* Custom mechanical button style */
+.btn-mechanical-red {
+  background: linear-gradient(180deg, #c92c20 0%, #871911 50%, #4b0d09 100%);
+  border: 1.5px solid #d2cec0;
+  border-radius: 4px;
+  color: #f1e7cf;
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.7),
+    0 8px 20px rgba(0, 0, 0, 0.45);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-mechanical-red:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.6),
+    0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.btn-mechanical-red:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.9),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-mechanical-dark {
+  background: linear-gradient(180deg, #242321 0%, #0d0d0c 100%);
+  border: 1.5px solid #8d897e;
+  border-radius: 4px;
+  color: #e8dfc8;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.8),
+    0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-mechanical-dark:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.15);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 12px 24px rgba(0, 0, 0, 0.55);
+}
+
+.btn-mechanical-dark:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.9),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
